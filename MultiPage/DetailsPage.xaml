@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MultiPage.DetailsPage"
+             Title="DetailsPage">
+    <ScrollView>
+        <Grid Padding="10" RowSpacing="10">
+            <!-- Define the rows, with the first row taking up 40% of the height, and the rest using auto-sizing -->
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2.5*" />
+                <!-- 40% of the screen height -->
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <!-- Image at the top -->
+            <Image Grid.Row="0" 
+                   Source="{Binding ImageSource}" 
+                   Aspect="Center" 
+                   HeightRequest="50" />
+
+            <!-- Topic name -->
+            <Label Grid.Row="1"
+                   Text="{Binding Name}"
+                   FontSize="24"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   Margin="0,10,0,0" />
+
+            <!-- Detailed information -->
+            <Label Grid.Row="2"
+                   Text="{Binding Description}"
+                   FontSize="16"
+                   LineBreakMode="WordWrap"
+                   Margin="0,10,0,0" />
+        </Grid>
+    </ScrollView>
+</ContentPage>
